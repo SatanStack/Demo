@@ -3,6 +3,7 @@ package com.jdbc.demo.bean;
 /**
  * @author satan
  * 用户的实体类
+ * 同意个业务用例，不同的表现方式
  */
 public class User {
     /**

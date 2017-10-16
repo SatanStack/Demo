@@ -4,30 +4,26 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Properties;
 
+/**
+ * JDBC工具类，Statement实例
+ */
 public class DBUtils {
 
     /**
      * 获得数据库连接
      * @return 数据库连接
      */
-    public  Connection getConnection(){
+    public  static Connection getConnection(){
         //数据库连接对象
         Connection mConnection = null;
-        Properties mProperties = new Properties();
-        String driver = null;
-        String url = null;
-        String user =null;
-        String password = null;
+
         try {
-            mProperties.load(this.getClass().getClassLoader().getResourceAsStream(
-                    "mysql.properties"));
-            //加载mysql驱动
-            driver=mProperties.getProperty("driver");
-            url=mProperties.getProperty("url");
-            user=mProperties.getProperty("user");
-            password=mProperties.getProperty("password");
+            DBPropities mDBPropities = DBPropities.getInstance();
+            String driver=mDBPropities.getDriver();
+            String url=mDBPropities.getUrl();
+            String user=mDBPropities.getUser();
+            String password=mDBPropities.getPassword();
             Class.forName(driver);
             /**
              * jdbc:mysql://localhost:3306/huachuan
