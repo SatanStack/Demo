@@ -1,4 +1,10 @@
-# Demo
-常用学习示例
-JspDemo:jsp
-JDBC:java连接mysql数据库示例
+## Demo
+This is Demo for learning.
+### J2EE
+
+```
+JDBCDemo: This is Demo for Java Database Connective.
+JspDemo: java servlet pages.
+MybatisDemo: Mybatis framework demo.
+HibernateDemo: Hibernate framework demo.
+```
